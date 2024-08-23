@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>All Category</title>
+    <link rel="stylesheet" href="Allpage.css">
+</head>
+<body>
+    <div id="allpages" class="allpages">
+        <div id="title" class="title">Banking System <span1>Admin</span1></div>
+        <label id="time" for=""></label>
+        </div>
+            <div id="container" class="container"> 
+                <img id="images" src="images/aclc.jpg" alt="" srcset="">
+                <p>Admin</p>
+                    <div class="butttonssss">
+                        <button id="DisplayAccounts" class="Button_Design" type="button">Display Accounts</button>
+                        <button id="Transactions" class="Button_Design" type="button">Transactions Logs</button>
+                        <!-- <button id="BestAccounts" class="Button_Design" type="button">Transfer logs</button> -->
+                        <button id="view-vip-button" class="Button_Design" onclick="toggleVipAccounts()">VIP Accounts</button>
+                        <button id="Top3Accounts" class="Button_Design" type="button">Top 3 Accounts</button>
+                        <button id="Exit"  class="Button_Design" type="button"><span>Exit</span></button>
+                    </div>
+                </div>
+            </div>
+            <main>
+                <table id="tableDisplayAccounts" class="tableDisplayAccounts">
+                    <tr>
+                        <label id="AccountList" for="">Account List: </label>
+                        <th  scope="col" >Account No</th>
+                        <th  scope="col">Account Name</th>
+                        <th  scope="col">Gender</th>
+                        <th  scope="col">Age</th>
+                        <th  scope="col">Account Type</th>
+                        <th  scope="col">Balance</th>
+                        <th  scope="col">Address</th>
+                        <th  scope="col">Action</th>
+                    </tr>
+                    <div id="pagination_controls"></div>
+                    <tbody id = "template_display"></tbody>
+                </table>
+
+            </main>
+
+            <main>
+                <table id="tableTransaction" class="tableTransaction">
+                    <tr>
+                        <th  scope="col" >Account No</th>
+                        <th  scope="col">Account Name</th>
+                        <th  scope="col">Action</th>
+                        <th  scope="col">Amount</th>
+                        <th  scope="col">Balance</th>
+                        <th  scope="col">Time</th>
+                        <th  scope="col">Date</th>
+                    
+                    </tr>
+                    <div id="paginationcontrols"></div>
+                    <tbody id = "templatedisplay"></tbody>
+                </table>
+
+            </main>
+            <main>
+                <div id="Top3accounts" class="top3accounts">
+                   <table class="topAccounts">
+                    <label class="top3" id="top3" for="">Top 3 Accounts ₱500,000 above</label>
+                    <tr>
+                        <th  scope="col" >Account No</th>
+                        <th  scope="col">Account Name</th>
+                        <th  scope="col">Balance</th>
+                    </tr>
+                    <tbody id = "top3templatedisplay"></tbody>
+                   </table>
+                </div>
+            </main>
+            <main>
+                <!-- <div id="transactions-list" style="display: none;"></div> -->
+                <div class="vip-accounts-list" id="vip-accounts-list"></div>
+            </main>
+
+
+            <script src="allpage.js"></script>
+</body>
+</html>

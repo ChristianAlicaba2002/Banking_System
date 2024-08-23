@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="UseExistingAccount.css">
+    <title>Transaction</title>
+</head>
+
+
+<body>
+    <h1>Banking System</h1>
+    <!-- <div class="back">
+        <a href="allpages.html">Back</a>
+    </div> -->
+        <label class="logout" id="logout" for="">Logout</label>
+        <div id="portal" class="">
+            <p id="welcome">Welcome</p>
+        <div class="details" id="details">
+            <h3 id="username">Account : </h3>
+            <h3 id="totalBal">Balanced : </h3>
+        </div>
+
+        <div id="deposit-portal" class="">
+           
+            <h4>Deposit</h4>
+            <label for="">Enter Amount:</label><br>
+            <input type="number" id="depositamount" class="textbox-style margin-bottom-12" required ><br>
+            <button id="depositsubmit"  onclick="deposit()"  type="button">Deposit</button>
+                
+        </div>
+        
+        <div id="withdraw-portal" class="">
+            <h4>Withdraw</h4>
+            <label for="">Enter Amount:</label><br>
+            <input type="number" id="withdrawamount"  class="textbox-style margin-bottom-12" required><br>
+            <button id="withdrawsubmit" onclick=" withdraw()" type="button">withdraw</button>
+        </div>
+        
+        <!-- <div id="transfer-portal" class="">
+            <h4>Transfer</h4>
+            <label for="">Enter Amount:</label><br>
+            <input type="text" id="TransferAmount"  class="textbox-style margin-bottom-12" required><br>
+            <label for="">Enter Transfer Account no.:</label><br>
+            <input type="text" id="transferamount"  class="textbox-style margin-bottom-12" required><br>
+            <button id="transfersubmit" type="button">Transfer</button>
+        </div>
+    -->
+
+        <div class="options">
+            <!-- <h3>Please select an options: </h3><br> -->
+            <div class="arrow1">
+                <img src="images/right-arrow.png" alt="" srcset="">
+                <div class="arrow2">
+                    <img src="images/arrow.png" alt="" srcset="">
+                </div>
+            </div>
+            <button id="deposit-btn" onclick="deposits()"   type="button">Deposit</button> 
+            <button id="withdraw-btn" onclick=" withdraws()"  type="button">Withdraw</button>
+            <button id="transfer-btn" onclick="showTransfer()"  type="button">Transfer</button>
+            <button id="transaction-btn" onclick="Transaction()" type="button">Transaction</button>
+            <button onclick="Accounts()" id="Account_btn" type="button">Account</button>
+        </div>
+
+        <h4 class="Transaction" id="Transaction">Transaction</h4>
+        <div id="tableTransactions">
+            <table>
+                <tr>
+                    <th  scope="col" >Account No</th>
+                    <th  scope="col">Account Name</th>
+                    <th  scope="col">Action</th>
+                    <th  scope="col">Amount</th>
+                    <th  scope="col">Time</th>
+                    <th  scope="col">Date</th>               
+                </tr>
+                <tbody id = "templatedisplay"></tbody>
+            </table>
+        </div>
+        <div id="transferFunds" class="transferFunds">
+            <label class="titleTransferFunds" for="" >Transfer funds</label><br>
+            <p for="">To:</p>
+                    <label class="Accno">Account No: </label><br>
+                    <input id="transferTo" type="password" placeholder="Enter Account Number" ><br>
+                    <!-- <label class="Accname" for="">Account Name: </label><br> -->
+                    <!-- <input id="transferName" type="text" placeholder="Enter your Name"><br> -->
+                    <label class="Accamount" for="">Amount: </label><br>
+                    <input id="transferAmount" type="number" placeholder="Enter your amount"><br>
+                <button id="transferSubmit" onclick="transfer()" type="button">Submit</button>
+        </div>
+
+
+    </div>
+    <div id="number" class="number">
+        <button onclick="amount('0')" for="">0</button>
+        <button onclick="amount('1')" for="">1</button>
+        <button onclick="amount('2')" for="">2</button>
+        <button onclick="amount('3')" for="">3</button>
+        <button onclick="amount('4')" for="">4</button>
+        <button onclick="amount('5')" for="">5</button>
+        <button onclick="amount('6')" for="">6</button>
+        <button onclick="amount('7')" for="">7</button>
+        <button onclick="amount('8')" for="">8</button>
+        <button onclick="amount('9')" for="">9</button>
+        <button class="delete" onclick="cleardisplay()" type="button">Clear</button>
+        
+    </div>
+
+    <main>
+
+    <script  src="UseExisitngAccount.js"></script>
+
+</body>
+</html>

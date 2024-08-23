@@ -1,0 +1,138 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p>Balance: <span id="balance">1000</span></p>
+    
+    <label for="amount">Amount: </label><br>
+    <input type="text" id="amount" placeholder="Enter amount"><br>
+
+    <button type="button" onclick="deposit()">Deposit</button><br>
+    <button type="button" onclick="withdraw()">Withdraw</button>
+
+
+    <script>
+        let balanceElement = document.getElementById("balance");
+        let balance = 1000;
+
+
+        function deposit(){
+            let amount = parseFloat(document.getElementById("amount").value);
+            if(amount < balance){
+                alert("Please Deposit more than 1k and above")
+            }else if(!isNaN(amount) && amount > 0){
+                balance += amount;
+                alert("Deposit Successfully")
+                updateBalance();
+            }else{
+                alert("Please enter a valid number");
+            }
+        }
+
+
+        function withdraw(){
+            let amount = parseFloat(document.getElementById("amount").value);
+            if(!isNaN(amount) && amount > 0){
+                if(amount <= balance){
+                    balance -= amount;
+                    updateBalance()           
+                }else{
+                    alert("Insufficient funds")
+                }
+            }else{
+                alert("Please enter a valid number")
+            }
+        }
+
+        function updateBalance(){
+            balanceElement.textContent = balance;
+        }
+    </script>
+
+</body>
+</html> -->
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Image</h1>
+    <label for="">Product Name</label><br>
+    <input type="text" id="name"><br>
+
+    <input type="file" id="myfile"><br>
+
+    <div id="images" class="">
+        <img id="myImg" src="#" alt=""><br>
+    </div>
+    <button id="submit" type="button">Submit</button>
+
+
+
+
+
+    <script>
+        let date = []
+
+        const name = document.getElementById("name")
+        const images = document.getElementById("images")
+        const submit = document.getElementById("submit")
+        const myfile = document.getElementById("myfile")
+
+        window.onload = function(){
+            let nameofFile = ""
+
+            document.querySelector('input[type="file"]').addEventListener('change',function(){
+                if(this.files && this.files[0]){
+                    var img = document.querySelector('img');
+
+                    img.onload =()=>{
+                        URL.revokeObjectURL(img.src);
+                    }
+                    img.src = URL.createObjectURL(this.files[0]);
+                };
+            });
+
+
+
+        }
+        const getfilename = (event) => {
+            const files = event.target.files;
+            const fileName = files[0].name;
+            nameofFile = fileName;
+            console.log("file name: ",nameofFile)
+        } 
+
+        myfile.addEventListener('change', getfilename)
+
+        submit.addEventListener('click' , () => {
+            alldata.push({
+                name:name.value,
+                images: nameofFile
+            });
+            let template = ""
+
+            for(let i = 0; i < alldata.length; i++){
+                `
+                <h1>${alldata[i].name}</h1>
+                <img src=${alldata[i].images} alt="" srcset="">                
+                
+                `
+            }
+
+            images.innerHTML = template;
+        });
+    </script>
+
+</body>
+
+</html>

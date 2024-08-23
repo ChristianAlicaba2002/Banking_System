@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Online Banking</title>
+    <link rel="stylesheet" href="CreateAccount.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<!-- onload="Greetings()" -->
+
+<body onload="renderAuth()">
+
+        <header>
+            <label id="darkmode" onclick="darkmode()" for=""></label>
+        </header>
+
+        <div class="greetings">
+            <p><span1>O</span1>nline <span1>B</span1>anking <br><span2>Thank you for Trusting!</span2></p>
+            <a href="About.html">About Us</a>
+        </div>
+        <form action="">
+            <div id="createaccount" class="center">
+                <!-- <h1>Banking System</h1> -->
+                <label id="ErrMessage" for=""></label>
+                <label id="ErrMessage1" for=""></label>
+                <div id="Login-portal" class="">
+                    <h2>Login</h2><br>
+                    <input type="password" id="LoginAccno" class="textbox-style" placeholder="Enter password" required><br>
+                        <img class="hideIcon" id="hideIcon" src="images/hideIcon.jpg" alt="" srcset="">
+                        <img class="showIcon" id="showIcon" src="images/visible.jpg" alt="" srcset="">
+                    <button id="loginbutton" onclick="handleLogin()" class="margin-bottom-12" type="button">Login</button><br>
+                    <label id="switchtoreg" class="switch" for="FORM_ELEMENT" onclick="viewRegister()" >Don't have an account?<span>Register</span></label>
+                        
+                    <span10>Connect with:</span10>
+                        <a href="https://web.facebook.com/" target="_blank"><i class="fa-brands fa-facebook icon_facebook"></i></a>
+                        <a href="https://www.instagram.com/" target="_blank"><i class="fa-brands fa-instagram icon_instagram"></i></a>
+                        <a href="https://x.com/" target="_blank"><i class="fa-brands fa-twitter icon_twitter"></i></a>
+                    
+                </div>
+                <br>
+                <div id="Registar-portal" class="">
+                    <h3 class="regh3">Register</h3><br>
+                    <input type="text" id="RegAccountName" class="textbox-style" placeholder="Enter Username" required><br>
+                    
+                    <label for="volume">Age: </label><br>
+                    <span id="volumeValue">50</span><br>
+                    <input class="range" type="range" id="volume" name="volume" min="0" max="100" value="50">
+                    Address:
+                    <select name="address" id="address">
+                        <option value="">Other</option>
+                        <option value="Liloan Cebu">Liloan Cebu</option>
+                        <option value="Mandaue City">Mandaue City</option>
+                        <option value="Cebu City">Cebu City</option>
+                        <option value="Consolacion City">Consolacion City</option>
+                        <option value="Danao City">Danao City</option>
+                        <option value="Bogo City">Bogo City</option>
+                        <option value="Compostela Cebu">Compostela Cebu</option>
+                        <option value="Carmen cebu">Carmen cebu</option>
+                        <option value="Sogod Cebu">Sogod Cebu</option>
+                        <option value="Asturias Cebu">Asturias Cebu</option>
+                        <option value="Talisay City">Talisay City</option>
+                        <option value="Naga City">Naga City</option>
+                        <option value="Minglanilia City">Minglanilia City</option>
+                        <option value="Lapu-Lapu City">Lapu-Lapu City</option>
+                        <option value="Maguikay Cebu">Maguikay Cebu</option>
+                        <option value="Daanbantayan Cebu">Daanbantayan Cebu</option>
+                        <option value="Sanfernando Cebu">Sanfernando Cebu</option>
+                        <option value="Banilad Cebu">Banilad Cebu</option>
+                        <option value="Talamban Cebu">Talamban Cebu</option>
+                        <option value="Lahug Cebu">Lahug Cebu</option>
+                        <option value="Canduman Cebu">Canduman Cebu</option>
+                        <option value="Oslob Cebu">Oslob Cebu</option>
+                        <option value="Toledo Cebu">Toledo Cebu</option>
+                        <option value="Tabuelan Cebu">Tabuelan Cebu</option>
+                        <option value="Pardo Cebu">Pardo Cebu</option>
+                    </select><br><br>
+                    Gender
+                    <select name="Genderr" id="Gender">
+                        <option value="Other">Other</option>
+                        <option value="Male">Male</option>
+                        <option value="Female">Female</option>
+                    </select><br><br>
+
+                    Transaction
+                    <select name="Transaction" id="Transaction">
+                        <option value="Other">Other</option>
+                        <option value="Savings">Savings</option>
+                        <option value="Financial">Financial</option>
+                        <option value="Business">Business</option>
+                        <option value="Personal">Personal</option>
+                    </select><br>
+                        <button id="registerbutton" onclick="handleRegister()" type="button">Register</button><br>
+                    <label id="switchtolog" onclick="viewLogin()" class="switch" for="">Do you have an account already?<span>Login</span></label>
+                </div>
+
+            </div>
+        </form>
+
+        <div id="registeredMessage" class="registeredMessage">
+            <p id="showmessage"></p>
+            <button1 onclick="button1()" id="button1">OK</button1>
+        </div>
+        
+   <script src="javascriptfunction.js"></script>
+
+</body>
+
+</html>
+

@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Account details</title>
+</head>
+<style>
+    body{
+        margin: 0;
+    }
+    h1{
+        color: rgb(255, 255, 255);
+        background: rgb(0, 0, 0);
+        font-family: 'Courier New', Courier, monospace;
+        font-size: 3rem;
+        margin-top: 0;
+        text-align: center;
+        min-width: 100%;
+        text-transform: uppercase;
+        position: absolute;
+        animation-name: glow;
+        animation-duration: 5s;
+        animation-iteration-count: infinite;
+        padding: 5px 0;
+        letter-spacing: 20px;
+    }
+    @keyframes glow{
+        50%{color: blue;}
+        100%{color: aqua;}
+     }
+    .DisplayAccounts{
+        padding: 5px 5px;
+        position: absolute;
+        top: 55.7%;
+        margin-left: 22%;
+        width: 59%;
+        color: #000000;
+        font-size: 1.1rem;
+        box-shadow: 0px 0px 5px black;
+        overflow-y: scroll;
+        border-radius: 8px;
+    }
+    tr{
+        background-color: #002fff;
+        color: white;
+    }
+    .DisplayAccounts th{
+        border-radius: 3px;
+        padding: 5px 10px;
+    }
+    #template_display tr{
+        color: black;
+        background-color: rgba(91, 91, 91, 0.252);
+    }
+    button{
+        margin-top: 5px;
+        padding: 5px 25px;
+        margin-left: 245%;
+        cursor: pointer;
+        border: 1px solid blue;
+        border-radius: 5px;
+        background-color: rgba(0, 0, 255, 0.379);
+        font-weight: bold;
+    }
+    button:hover{
+        transition: 0.3s;
+        background-color: blue;
+        color: white;
+    }
+    .information{
+        padding: 5px 5px;
+        margin-top: 13%;
+        margin-left: 10.5%;
+        position: absolute;
+        width: 90%;
+        height: 20%;
+    }
+    .information label{
+        display: inline-flex;
+    }
+    input[type=text]{
+        position: relative;
+        padding: 10px 15px;
+        display: inline-flex;
+        margin-right: 10px;
+        cursor: pointer;
+        outline: 0;
+        border: 2px solid transparent;
+        border-radius: 5px;
+        background-color: rgba(0, 0, 0, 0.133);
+    }
+    input[type=text]:focus{
+        transition: .3s;
+        border: 2px solid green;
+    }
+    .Accno{
+        position: absolute;
+        margin-top: -20px;
+        margin-left: 5%;
+    }
+    .Accname{
+        position: absolute;
+        margin-top: -20px;
+        margin-left: 55px;
+    }
+    .gender{
+        position: absolute;
+        margin-top: -20px;
+        margin-left: 78px;
+    }
+    .address{
+        position: absolute;
+        margin-top: -20px;
+        margin-left: 70px;
+    }
+    .updated{
+        border-radius: 5px;
+        position: absolute;
+        margin-top: 10px;
+        margin-left: 32%;
+        outline: 0;
+        border: 1px solid rgb(0, 255, 26);
+        background-color: rgba(51, 255, 0, 0.287);
+        display: none;
+    }
+    .updated:hover{
+        transition: 0.3s;
+        background-color: rgb(21, 255, 0);
+        color: rgb(0, 0, 0);
+    }
+    .AccountType{
+        position: absolute;
+        margin-top: -20px;
+        margin-left: 60px;
+    }
+</style>
+<body>
+    <h1>Banking System</h1>
+
+    <main>
+        <div class="information">
+            <label class="Accno" for="">Account No: </label>
+            <input id="new_AcccountNo" type="text" placeholder="Enter Account no">
+            <label class="Accname" for="">Account Name: </label>
+            <input id="new_AccountName" type="text" placeholder="Enter Account name">
+            <label class="gender" for="">Gender: </label>
+            <input id="new_AccountGender" type="text" placeholder="Enter gender">
+            <label class="AccountType" for="">Account Type: </label>
+            <input id="new_AccountType" type="text" placeholder="Enter Account type">
+            <label class="address" for="">Address: </label>
+            <input id="new_AccountAddress" type="text" placeholder="Enter Address"><br>
+            <button class="updated" id="updated" onclick="update()" type="button">Update</button>
+        </div>
+        
+    </main>
+
+    <main>
+        <table id="Accounts" class="DisplayAccounts">
+            <label id="AccountList" for="">Account List: </label>
+            <tr>
+                <th  scope="col" >Account No</th>
+                <th  scope="col">Account Name</th>
+                <th  scope="col">Gender</th>
+                <th  scope="col">Account Type</th>
+                <th  scope="col">Balance</th>
+                <th  scope="col">Address</th>
+            </tr>
+            <tbody id = "template_display"></tbody>
+        </table>
+    </main>
+
+
+
+
+<script>
+
+let getacc = localStorage.getItem("currentLogin");
+displayProduct()
+function displayProduct() {
+    const getAllUser = JSON.parse(localStorage.getItem('users')) || [];
+        let showuser = "";
+        if(getAllUser == ""){
+            alert("No Account exist.");
+            return window.location.assign("CreateAccount.html")
+        }else{
+            getAllUser.forEach((getUser, i)  =>   {
+                        if(getUser.AccNum == getacc){
+                            showuser +=
+                        `
+                            <tr>      
+                                    <th>${getUser.AccNum}</th>
+                                    <th>${getUser.AccName}</th>
+                                    <th>${getUser.AccGender}</th>
+                                    <th>${getUser.Acctype}</th>
+                                    <th>&#8369;${getUser.balance.toLocaleString()}</th>
+                                    <th>${getUser.AccAddress}</th>
+                            </tr>
+                           <button onclick=edit(${i})>Edit</button>
+                            `
+                    }
+                    template_display.innerHTML = showuser;
+            });
+    }
+                    
+                        
+}
+                   
+function edit(i) {
+    displayProduct()
+    const new_AcccountNo = document.getElementById("new_AcccountNo");
+    const new_AccountName = document.getElementById("new_AccountName");
+    const new_AccountGender = document.getElementById("new_AccountGender");
+    const new_AccountType = document.getElementById("new_AccountType");
+    const new_AccountAddress = document.getElementById("new_AccountAddress");
+
+    const getAllUser = JSON.parse(localStorage.getItem('users')) || [];
+            getAllUser.forEach(user => {
+                if(user.AccNum == getacc){
+                alert("Editing processing")
+                new_AcccountNo.value = user.AccNum
+                new_AccountName.value =  user.AccName
+                new_AccountGender.value =  user.AccGender
+                new_AccountType.value =  user.Acctype
+                new_AccountAddress.value = user.AccAddress
+    
+               document.getElementById("updated").style.display = "inline-block"
+                }
+           });
+ 
+}
+
+
+function clearAlldisplay(){
+     new_AcccountNo.value = ""
+     new_AccountName.value = "" 
+     new_AccountGender.value = ""
+     new_AccountType.value = "" 
+     new_AccountAddress.value = "" 
+}
+function update() {
+    const new_AcccountNo = document.getElementById("new_AcccountNo");
+    const new_AccountName = document.getElementById("new_AccountName");
+    const new_AccountGender = document.getElementById("new_AccountGender");
+    const new_AccountType = document.getElementById("new_AccountType");
+    const new_AccountAddress = document.getElementById("new_AccountAddress");
+
+    const getAllUser = JSON.parse(localStorage.getItem('users')) || [];
+    const changed = JSON.parse(localStorage.getItem('transac')) || [];
+    
+            changed.forEach(change => {
+                if(change.AccNum == getacc){
+                        change.AccNum = new_AcccountNo.value
+                        change.AccName = new_AccountName.value.charAt(0).toUpperCase() + new_AccountName.value.slice(1)
+                        localStorage.setItem("transac", JSON.stringify(changed));
+                };
+            });
+            getAllUser.forEach(getUser => {
+                if(getUser.AccNum == getacc){
+                    if(new_AcccountNo.value == "" || new_AccountName.value == "" || new_AccountGender.value == "" || new_AccountType.value == "" || new_AccountAddress.value == "" ){
+                        alert("Please fill up all form.")
+                        return;
+                    }else{
+                        alert("Updated Successfully")
+                        getUser.AccNum = new_AcccountNo.value
+                        getUser.AccName = new_AccountName.value.charAt(0).toUpperCase() + new_AccountName.value.slice(1)
+                        getUser.AccGender = new_AccountGender.value.charAt(0).toUpperCase() + new_AccountGender.value.slice(1)
+                        getUser.Acctype = new_AccountType.value.charAt(0).toUpperCase() + new_AccountType.value.slice(1)
+                        getUser.AccAddress = new_AccountAddress.value.charAt(0).toUpperCase() + new_AccountAddress.value.slice(1)
+                        localStorage.setItem("users", JSON.stringify(getAllUser));
+                        displayProduct();
+                        clearAlldisplay();
+                        document.getElementById("updated").style.display = "none" 
+                    }
+                }
+            });
+        
+}
+
+
+document.addEventListener("DOMContentLoaded" , () => {
+    if(sessionStorage.getItem("LoggedIn") != "true" /*|| localStorage.getItem("LoggedIn") != "true"*/){
+        window.location.assign("CreateAccount.html")
+    }
+})
+
+</script>
+
+</body>
+</html>

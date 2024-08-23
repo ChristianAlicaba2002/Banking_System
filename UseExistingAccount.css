@@ -1,0 +1,782 @@
+body{
+    /* background-image: url(images/hacker.jpg);
+    background-position: center;
+    background-size: cover;
+    background-attachment: fixed;
+    */
+    padding: 0;
+    margin: 0;
+    background-image: url(images/useExistingPic.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    /* background: white; */
+}
+.details{
+    display: none;
+}
+.logout{
+    cursor: pointer;
+    z-index: 10;
+    position: absolute;
+    margin-top: 20px;
+    margin-left: 1%;
+    font-size: 1rem;
+    border: 0;
+    border-radius: 5px;
+    padding: 5px 7px;
+    color: rgb(255, 255, 255);
+   border: 1px solid white;
+}
+.logout:hover{
+    color: #000000;
+    background-color: #ffffff;
+}
+.logout:active{
+    background-color: rgba(255, 255, 255, 0.705);
+}
+h1{
+    color: rgb(255, 255, 255);
+    background: rgb(0, 0, 0);
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 3rem;
+    margin-top: 0;
+    text-align: center;
+    width: 100%;
+    letter-spacing: 20px;
+    text-transform: uppercase;
+    position: absolute;
+    animation-name: glow;
+    animation-duration: 5s;
+    animation-iteration-count: infinite;
+    padding: 7px 0;
+}
+@keyframes glow{
+   50%{color: blue;}
+   100%{color: aqua;}
+}
+
+p{
+    font-weight: bold;
+    /* text-shadow: -3px -1px 5px rgb(42, 43, 43); */
+    margin-left: -25px;
+    position: absolute;
+    margin-top: -27%;
+    color: rgb(0, 0, 0);
+    font-size: 4rem;
+    font-family:'Times New Roman', Times, serif;
+}
+.details #username{
+    color: rgb(0, 0, 0);
+    float: left;
+    margin-top: -100px;
+    margin-left: -20%;
+    position: absolute;
+    font-size: 1.2rem;
+}
+.details #totalBal{
+    color: rgb(0, 0, 0);
+    float: left;
+    margin-top: -100px;
+    margin-left: 27%;
+    position: absolute;
+    font-size: 1.3rem;
+}
+#portal{
+    box-shadow: 0px 5px 10px rgb(0, 0, 0);
+    border-radius: 15px;
+    margin-left: 20%;
+    margin-top: 8%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* border: 1px solid black; */
+    width: 60%;
+    height: 60%;
+    position: absolute;
+    background: rgb(244, 244, 244);
+}
+@keyframes colorchange {
+    100%{background: rgba(0, 0, 0, 0.264)};
+}
+
+#deposit-portal .delete{
+    font-size: 100%;
+    font-weight: bold;
+    background-color: rgba(255, 255, 255, 0.992);
+    position: absolute;
+    padding: 3px 5px;
+    border-radius: 5px;
+    border: 1px solid;
+    cursor: pointer;
+    float: left;
+    margin-top: 100px;
+    margin-left: 34%;
+}
+
+#deposit-portal{
+    display: none;
+    transition: 5s;
+} 
+
+ #withdraw-portal{
+    display: none;
+}
+/* #transfer-portal{
+    display: none;
+} */
+#deposit-portal {
+    color: white;
+}
+#deposit-portal h4{
+    color: black;
+   font-family:'Times New Roman', Times, serif;
+   letter-spacing: 4px;
+    font-size: 2.5rem;
+    margin-top: -150px;
+    margin-left: 3%;
+}
+#deposit-portal label{
+    color: black;
+    margin-left: -135%;
+    font-size: 1.2rem;
+}
+
+#deposit-portal input{
+    border: 2px solid skyblue;
+    color: rgb(0, 0, 0);
+    cursor: pointer;
+    background-color: rgba(128, 128, 128, 0.291);
+    margin-left: -100%;
+    padding: 12px;
+    border-radius: 6px;
+    font-size: 14px;
+    font-weight: bold;
+}
+#deposit-portal button{
+    color: rgb(0, 0, 0);
+    font-weight: bold;
+    background-color: rgba(255, 255, 255, 0);
+    box-shadow: 0px 0px 3px black;
+    position: absolute;
+    padding: 5px 9px;
+    border-radius: 3px;
+    border: 0;
+    cursor: pointer;
+    float: left;
+    margin-top: 10px;
+    margin-left: -8.5%;
+}
+#deposit-portal button:hover{
+    color: rgb(0, 0, 0);
+    background-color: rgba(255, 255, 255, 0.994);
+}
+#deposit-portal button:active{
+    background-color: rgba(255, 255, 255, 0.092);
+    color: rgb(0, 0, 0);
+}
+
+.options{
+    position: absolute;
+    margin-top: 33%;
+    float: left;
+}
+
+/* .options h3{
+    text-align: center;
+    margin-bottom: -5px;
+} */
+.arrow1 img{
+    margin-left: -36px;
+    margin-top: 55px;
+    position: absolute;
+    width: 20px;
+   animation-name: forward;
+    animation-duration: 1.5s;
+    animation-iteration-count: infinite;
+}
+@keyframes forward {
+  from{transform: translateX(-10px)}
+  to{transform: translateX(10px)}
+}
+
+.arrow2 img{
+    font-weight: bold;
+    margin-left: 104%;
+    margin-top: 55px;
+    position: absolute;
+    width: 20px;
+    animation-name: forward1;
+    animation-duration: 1.5s;
+    animation-iteration-count: infinite;
+  
+}
+@keyframes forward1 {
+    from{transform: translateX(6px)}
+    to{transform: translateX(-15px)}
+}
+.options button{
+    margin-top: 15%;
+    color: white;
+    font-weight: bold;
+    background: transparent;
+    box-sizing: border-box;
+    margin-right: 5px;
+    cursor: pointer;
+    border: 0;
+    border-radius: 6px;
+    padding: 5px 10px;
+    background: rgba(239, 239, 239, 0.51);
+    color: rgb(0, 0, 0);
+}
+.options button:hover{
+    color: rgb(0, 0, 0);
+    transition: .3s;
+    background-color: rgba(196, 196, 196, 0.994);
+}
+.options button:active {
+    color: black;
+   background-color: rgba(255, 255, 255, 0.435);
+}
+#withdraw-portal {
+    color: white;
+   
+}
+#withdraw-portal h4{
+    color: black;
+    font-family:'Times New Roman', Times, serif;
+    letter-spacing: 4px;
+    font-size: 2.5rem;
+    margin-top: -150px;
+    margin-left: 2%;
+}
+#withdraw-portal label{
+    color: black;
+    margin-left: -135%;
+    font-size: 1.2rem;
+}
+
+#withdraw-portal input{
+    border: 2px solid skyblue;
+    background-color: rgba(128, 128, 128, 0.291);
+    color: rgb(1, 2, 1);
+    cursor: pointer;
+    margin-left: -100%;
+    padding: 12px;
+    border-radius: 6px;
+    /* border: 1px solid; */
+    font-size: 14px;
+    font-weight: bold;
+}
+#withdraw-portal input:active{
+    border: 2px solid red;
+}
+
+#withdraw-portal button{
+    color: rgb(0, 0, 0);
+    font-weight: bold;
+    background-color: rgba(255, 255, 255, 0);
+    position: absolute;
+    padding: 5px 9px;
+    border-radius: 3px;
+    border: 0;
+    cursor: pointer;
+    float: left;
+    margin-top: 10px;
+    margin-left: -9%;
+    box-shadow: 0px 0px 3px black;
+}
+#withdraw-portal button:hover{
+    color: rgb(0, 0, 0);
+    background-color: rgba(255, 255, 255, 0.994);
+}
+#withdraw-portal button:active{
+    background-color: rgba(255, 255, 255, 0.092);
+    color: rgb(0, 0, 0);
+}
+.number{
+    margin-left: 35.5%;
+    position: absolute;
+    margin-top: 30%;
+    box-sizing: border-box;
+}
+.number button{
+    cursor: pointer;
+    border: 2px solid black;
+    border-radius: 5px;
+    padding: 3px 10px;
+    box-sizing: border-box;
+    font-size: 100%;
+    background-color: rgba(255, 255, 255, 0.494);
+    color: rgb(0, 0, 0);
+    font-weight: bold;
+}
+.number button:hover{
+    border: 2px solid rgb(243, 0, 0);
+    color: red;
+   background: rgba(128, 128, 128, 0.301);
+}
+.number button:active{
+    color: rgb(0, 0, 0);
+    background-color: rgba(245, 222, 179, 0.419);
+}
+#tableTransactions{
+    margin-top: 1%;
+    padding-left: 20px;
+    padding-top: 1px;
+    position: absolute;
+    top: 13.7%;
+    margin-left: 3%;
+    width: 85%;
+    height: 70%;
+    color: rgb(255, 255, 255);
+    background-color:transparent;
+    font-size: 1.1rem;
+    display: none;
+    overflow-y: scroll;
+}
+.Transaction{
+    position: absolute;
+    color: black;
+    font-family:'Times New Roman', Times, serif;
+    letter-spacing: 4px;
+    font-size: 2.3rem;
+    margin-top: -33%;
+    margin-left: 3%;
+    display: none;
+}
+tr{
+    background-color: rgb(0, 55, 255);
+}
+th{
+    border-radius: 5px;
+    padding: 5px 13px;
+}
+#templatedisplay tr{
+    color: black;
+    background-color: rgba(226, 226, 226, 0.625);
+}
+.transferFunds{
+    position: absolute;
+    display: none;
+    min-width: 100%;
+}
+
+.titleTransferFunds{
+    font-weight: bold;
+    margin-top: -22%;
+    display: flex;
+    font-size: 2.3rem;
+    margin-left: 35.5%;
+}
+.transferFunds p{
+    margin-top: 2%;
+    position: absolute;
+    font-size: 1.2rem;
+    margin-left: 15%;
+}
+.Accno{
+    position: absolute;
+    margin-top: 5%;
+    margin-left: 20%;
+}
+.Accname{
+    position: absolute;
+    margin-top: 7%;
+    margin-left: 20%;
+}
+.Accamount{
+    position: absolute;
+    margin-top: 8%;
+    margin-left: 20%;
+}
+.transferFunds input[type=text]{
+    cursor: pointer;
+    position: absolute;
+    padding: 5px 15px;
+    margin-top: 7%;
+    margin-left: 28%;
+    border: 1px solid skyblue;
+    border-radius: 5px;
+    outline: 0;
+}
+.transferFunds input[type=password]{
+    cursor: pointer;
+    position: absolute;
+    padding: 5px 15px;
+    margin-top: 46px;
+    margin-left: 28%;
+    border: 1px solid skyblue;
+    border-radius: 5px;
+    outline: 0;
+}
+.transferFunds input[type=number]{
+    outline: none;
+    border: 1px solid skyblue;
+    position: absolute;
+    padding: 5px 15px;
+    margin-top: 8%;
+    border-radius: 5px;
+    margin-left: 28%;
+    cursor: pointer;
+}
+.transferFunds input[type=text]:focus{
+    border: 1px solid blue;
+}
+.transferFunds input[type=password]:focus{
+    border: 1px solid blue;
+}
+.transferFunds input[type=number]:focus{
+    border: 1px solid blue;
+}
+.transferFunds button{
+    outline: 0;
+    border: 1px solid transparent;
+    cursor: pointer;
+    padding: 3px 7px;
+    position: absolute;
+    margin-top: 6.2%;
+    margin-left: 55%;
+    background-color: rgb(255, 255, 255);
+    box-shadow: 0px 0px 2px black;
+}
+.transferFunds button:hover{
+    background-color: rgba(229, 229, 229, 0.812);
+}
+.transferFunds button:active{
+    background-color: rgba(145, 145, 145, 0.529);
+}
+/* 
+@media screen and (min-width: 1024px){
+    #withdraw-portal h4{
+        text-shadow: -3px -1px 5px rgb(42, 43, 43);
+        color: black;
+        font-family:'Times New Roman', Times, serif;
+        letter-spacing: 4px;
+        font-size: 2.5rem;
+        margin-top: -150px;
+        margin-left: 10px;
+    }
+    #withdraw-portal label{
+        color: black;
+        font-size: 1.2rem;
+        margin-left: -185px;
+    }
+    #withdraw-portal input{
+        border: 2px solid rgb(0, 255, 255);
+        margin-left: -185px;
+    }
+    #withdraw-portal button{
+        margin-left: -40px;
+    }  
+    .number button{
+        cursor: pointer;
+        border: 2px solid black;
+        border-radius: 5px;
+        padding: 3px 10px;
+        box-sizing: border-box;
+        background-color: rgba(255, 255, 255, 0.494);
+        color: rgb(0, 0, 0);
+        font-weight: bold;
+        font-size: 13px;
+        box-sizing: border-box;
+        float: left;
+        margin-right: 23px;
+        margin-top: 160px;
+        margin-left: -20px;
+    }
+    .number button:hover{
+        border: 2px solid rgb(243, 0, 0);
+        color: red;
+       background: rgba(128, 128, 128, 0.301);
+    }
+    .number button:active{
+        color: rgb(0, 0, 0);
+        background-color: rgba(245, 222, 179, 0.419);
+    }
+    #deposit-portal h4{
+    text-shadow: -3px -1px 5px rgb(42, 43, 43);
+    color: black;
+   font-family:'Times New Roman', Times, serif;
+   letter-spacing: 4px;
+    font-size: 2.5rem;
+    margin-top: -150px;
+    margin-left: -1%;
+    }
+    #deposit-portal label{
+        margin-left: -215px;
+    }
+    #deposit-portal input{
+        margin-left: -215px;
+    }
+    #deposit-portal button{
+        margin-left: -60px;
+    }
+    .options button{
+        position: relative;
+        margin-top: 61px;
+    }
+    .arrow1{
+        position: relative;
+        margin-top: 146px;
+    }
+    .arrow2{
+        margin-top: 140px;
+    }
+} */
+
+/* 
+@media screen and (min-width:767px) and (max-width:1023px)
+{
+    #withdraw-portal h4{
+        text-shadow: -3px -1px 5px rgb(42, 43, 43);
+        color: black;
+        font-family:'Times New Roman', Times, serif;
+        letter-spacing: 4px;
+        font-size: 2.5rem;
+        margin-top: -150px;
+        margin-left: 10px;
+    }
+    #withdraw-portal label{
+        color: black;
+        font-size: 1.2rem;
+        margin-left: -185px;
+    }
+    #withdraw-portal input{
+        border: 2px solid rgb(0, 255, 255);
+        margin-left: -185px;
+    }
+    #withdraw-portal button{
+        margin-left: -40px;
+    }  
+    .number button{
+        cursor: pointer;
+        border: 2px solid black;
+        border-radius: 5px;
+        padding: 3px 10px;
+        box-sizing: border-box;
+        background-color: rgba(255, 255, 255, 0.494);
+        color: rgb(0, 0, 0);
+        font-weight: bold;
+        font-size: 13px;
+        box-sizing: border-box;
+        float: left;
+        margin-right: 23px;
+        margin-top: 160px;
+        margin-left: -20px;
+    }
+    .number button:hover{
+        border: 2px solid rgb(243, 0, 0);
+        color: red;
+       background: rgba(128, 128, 128, 0.301);
+    }
+    .number button:active{
+        color: rgb(0, 0, 0);
+        background-color: rgba(245, 222, 179, 0.419);
+    }
+    #deposit-portal h4{
+    text-shadow: -3px -1px 5px rgb(42, 43, 43);
+    color: black;
+   font-family:'Times New Roman', Times, serif;
+   letter-spacing: 4px;
+    font-size: 2.5rem;
+    margin-top: -150px;
+    margin-left: -1%;
+    }
+    #deposit-portal label{
+        margin-left: -215px;
+    }
+    #deposit-portal input{
+        margin-left: -215px;
+    }
+    #deposit-portal button{
+        margin-left: -60px;
+    }
+    .options button{
+        position: relative;
+        margin-top: 61px;
+    }
+    .arrow1{
+        position: relative;
+        margin-top: 156px;
+    }
+    .arrow2{
+        margin-top: 140px;
+    }
+}
+
+
+
+@media screen and (max-width:767px) {
+    #withdraw-portal h4{
+        text-shadow: -3px -1px 5px rgb(42, 43, 43);
+        color: black;
+        font-family:'Times New Roman', Times, serif;
+        letter-spacing: 4px;
+        font-size: 2.5rem;
+        margin-top: -150px;
+        margin-left: 10px;
+    }
+    #withdraw-portal label{
+        color: black;
+        font-size: 1.2rem;
+        margin-left: -185px;
+    }
+    #withdraw-portal input{
+        border: 2px solid rgb(0, 255, 255);
+        margin-left: -185px;
+    }
+    #withdraw-portal button{
+        margin-left: -40px;
+    }  
+    .number button{
+        cursor: pointer;
+        border: 2px solid black;
+        border-radius: 5px;
+        padding: 3px 10px;
+        box-sizing: border-box;
+        background-color: rgba(255, 255, 255, 0.494);
+        color: rgb(0, 0, 0);
+        font-weight: bold;
+        font-size: 13px;
+        box-sizing: border-box;
+        float: left;
+        margin-right: 23px;
+        margin-top: 160px;
+        margin-left: -20px;
+    }
+    .number button:hover{
+        border: 2px solid rgb(243, 0, 0);
+        color: red;
+       background: rgba(128, 128, 128, 0.301);
+    }
+    .number button:active{
+        color: rgb(0, 0, 0);
+        background-color: rgba(245, 222, 179, 0.419);
+    }
+    #deposit-portal h4{
+    text-shadow: -3px -1px 5px rgb(42, 43, 43);
+    color: black;
+   font-family:'Times New Roman', Times, serif;
+   letter-spacing: 4px;
+    font-size: 2.5rem;
+    margin-top: -150px;
+    margin-left: -1%;
+    }
+    #deposit-portal label{
+        margin-left: -215px;
+    }
+    #deposit-portal input{
+        margin-left: -215px;
+    }
+    #deposit-portal button{
+        margin-left: -60px;
+    }
+    .options button{
+        position: relative;
+        margin-top: 61px;
+    }
+    .arrow1{
+        position: relative;
+        margin-top: 200x;
+    }
+    .arrow2{
+        margin-top: 140px;
+    }
+}
+
+
+@media screen and (max-width: 414px) and (min-width: 896px ) {
+    #withdraw-portal h4{
+        text-shadow: -3px -1px 5px rgb(42, 43, 43);
+        color: black;
+        font-family:'Times New Roman', Times, serif;
+        letter-spacing: 4px;
+        font-size: 2.5rem;
+        margin-top: -150px;
+        margin-left: 10px;
+    }
+    #withdraw-portal label{
+        color: black;
+        font-size: 1.2rem;
+        margin-left: -185px;
+    }
+    #withdraw-portal input{
+        border: 2px solid rgb(0, 255, 255);
+        margin-left: -185px;
+    }
+    #withdraw-portal button{
+        margin-left: -40px;
+    }  
+    .number button{
+        cursor: pointer;
+        border: 2px solid black;
+        border-radius: 5px;
+        padding: 3px 10px;
+        box-sizing: border-box;
+        background-color: rgba(255, 255, 255, 0.494);
+        color: rgb(0, 0, 0);
+        font-weight: bold;
+        font-size: 13px;
+        box-sizing: border-box;
+        float: left;
+        margin-right: 23px;
+        margin-top: 160px;
+        margin-left: -20px;
+    }
+    .number button:hover{
+        border: 2px solid rgb(243, 0, 0);
+        color: red;
+       background: rgba(128, 128, 128, 0.301);
+    }
+    .number button:active{
+        color: rgb(0, 0, 0);
+        background-color: rgba(245, 222, 179, 0.419);
+    }
+    #deposit-portal h4{
+    text-shadow: -3px -1px 5px rgb(42, 43, 43);
+    color: black;
+   font-family:'Times New Roman', Times, serif;
+   letter-spacing: 4px;
+    font-size: 2.5rem;
+    margin-top: -150px;
+    margin-left: -1%;
+    }
+    #deposit-portal label{
+        margin-left: -215px;
+    }
+    #deposit-portal input{
+        margin-left: -215px;
+    }
+    #deposit-portal button{
+        margin-left: -60px;
+    }
+    .options button{
+        position: relative;
+        margin-top: 100px;
+    }
+    .arrow1{
+        position: relative;
+        margin-top: 146px;
+    }
+    .arrow2{
+        position: relative;
+        margin-top: 140px;
+    }
+} */
+/* .back{
+    margin-left: 10px;
+    margin-top: 20px;
+    position: absolute;
+}
+.back ul li {
+    list-style: none;
+
+}
+.back a{
+    cursor: pointer;
+    font-size: 1.3rem;
+    text-decoration: none;
+    color: white;
+} */
